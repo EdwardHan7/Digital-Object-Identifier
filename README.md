@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# DOI Information Fetcher Project Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The DOI Information Fetcher is a single-page application built with React and Redux to fetch article information associated with a Digital Object Identifier (DOI).
 
-## Available Scripts
+## Technology Choices
 
-In the project directory, you can run:
+- **React**: React is a JavaScript library for building user interfaces. In this project, we used React to construct the user interface and React Hooks for handling the component's state and lifecycle.
 
-### `npm start`
+- **Redux**: Redux is a predictable state container for JavaScript applications. In this project, we used Redux to manage global state, such as the status and result of fetching DOI information.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Material UI**: Material UI is a popular React UI framework offering a rich and flexible set of components. In this project, we used Material UI to construct the user interface and leveraged its theming capability to achieve responsive design.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Axios**: Axios is a Promise-based HTTP client for the browser and Node.js. In this project, we used Axios to make HTTP requests to fetch DOI information.
 
-### `npm test`
+## UI Design Philosophy
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The UI design of this project follows the principles of simplicity and ease-of-use. Users can enter the DOI in a single input field and click the "Fetch" button to get the information. The fetched information is displayed on the page in the form of a card.
 
-### `npm run build`
+The page theme uses the default Material UI theme, ensuring a pleasant visual experience across various devices and screen sizes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Data Visualization Approach
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The fetched DOI information is presented as a card on the page. The card includes the title of the paper, authors, and journal information. To ensure a good reading experience across different screen sizes, we utilized the responsive design features of Material UI.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Performance Optimization Strategy
 
-### `npm run eject`
+The performance optimization in this project primarily centers on network requests. Before sending a request to fetch DOI information, we first check whether the current state is 'loading'. If so, we avoid making a new request, preventing unnecessary network traffic.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Simultaneously, we used Redux's asynchronous Actions to handle network requests, ensuring the state is only updated upon successful completion of the request.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Testing Strategy
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+We employed Jest and the React Testing Library for unit testing and component testing. The aim of testing is to ensure the correctness of the core functionalities and the quality of the code. For instance, we test whether the application correctly fetches and displays information when a valid DOI is input and the "Fetch" button is clicked. We also test for exceptions, like displaying the correct error message when an invalid DOI is entered.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Conclusion
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The above covers the key design and implementation details of the DOI Information Fetcher project. The project adheres to modular and testable design principles and uses the latest technologies in React and Redux. Whether you are looking to learn about React and Redux, or need a practical tool to fetch DOI information, this project serves as a beneficial resource.
