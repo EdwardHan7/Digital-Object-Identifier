@@ -27,7 +27,7 @@ export default function CustomizedInputBase({ onFetch }) {
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
-      event.preventDefault();  // 阻止表单自动提交
+      event.preventDefault();  
       onFetch(doi);
     }
   };
